@@ -6,11 +6,12 @@ This is a powerful Rust-based web documentation crawler designed to automaticall
 
 ## Features
 
-- 🌐 Crawl web documentation sites
+- 🌐 Crawl web documentation sites using asynchronous programming with `tokio`
 - 📄 Convert web content to markdown
 - 🖼️ Download and embed images
 - 🚀 Asynchronous, non-blocking design
-- 🔍 Supports dynamic content rendering
+- 🔍 Supports dynamic content rendering with `fantoccini` WebDriver integration
+- Enhanced error handling with `Crawler` enum
 
 ## Prerequisites
 
@@ -21,15 +22,35 @@ This is a powerful Rust-based web documentation crawler designed to automaticall
 
 ## Installation
 
+Ensure you have the following dependencies:
+
+- `tokio` for async runtime
+- `fantoccini` for WebDriver integration
+- `scraper` for HTML parsing
+- `url` for URL manipulation
+- `serde` for serialization
+
 1. Clone the repository
 2. Ensure Firefox and GeckoDriver are installed
 3. Run `cargo build`
 
 ## Usage
 
+To run the crawler, use the following command:
+
 ```bash
-cargo run -- --url https://example.com/docs
+cargo run -- --url <URL> --output <OUTPUT_DIR>
 ```
+
+Example:
+
+```bash
+cargo run -- --url https://docs.hrea.io/ --output ./output
+```
+
+## Testing
+
+The crawler has been tested with [https://docs.hrea.io/](https://docs.hrea.io/), demonstrating its ability to extract and convert web documentation to markdown format.
 
 ## Configuration
 
